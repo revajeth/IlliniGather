@@ -16,6 +16,11 @@ body {
     font-size: 20px;
     padding-top: 50px;
   }
+  h3 {
+    color: white;
+    font: 1em sans-serif;
+    font-size: 20px;
+  }
   form {
     color: white;
     font-size: 25px;
