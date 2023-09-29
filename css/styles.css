@@ -1,0 +1,33 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(23, 41, 77);
+    text-align: center;
+  }
+  
+  h1 {
+    color: orange;
+    text-align: center;
+    font-size: 50px;
+  }
+  h2 {
+    color: white;
+    font: 1em sans-serif;
+    font-size: 20px;
+    padding-top: 50px;
+  }
+  form {
+    color: white;
+    font-size: 25px;
+    padding-top: 50px;
+    
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Add more styles as needed */
+  
