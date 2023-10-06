@@ -21,11 +21,38 @@ body {
     font: 1em sans-serif;
     font-size: 20px;
   }
+
+  .updown {
+    padding: 5px 10px;
+    text-align: right;
+    word-spacing: 150px;
+
+    color: black;
+  }
+  .upvote {
+    color: black;
+    font-weight: 100;
+    padding: 5px 10px;
+    border-radius: 10px;
+  }
+
   form {
     color: white;
     font-size: 25px;
     padding-top: 50px;
     
+  }
+  .box {
+    width: 600px; 
+    height: 500px; 
+    background-color:rgb(236, 212, 180); 
+    padding: 10px;
+    padding-right: 50px; 
+    text-align: left; 
+    margin: 0 auto;
+    border-radius: 30px;
+      
+    /* flex-direction: column; */
   }
   
   .container {
