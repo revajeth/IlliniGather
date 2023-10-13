@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Location</title>
+    <link href="../static/css/styles.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <h1>Add a New Location!</h1>
+
+    <form>
+        <label for="category">Category:</label>
+        <select id="category" name="category">
+            <option value="restaurants">Restaurants</option>
+            <option value="study_spots">Study Spots</option>
+            <option value="nightlife">Nightlife</option>
+            <option value="events">Events</option>
+        </select>
+
+        <br>
+
+        <label for="locationName">Location Name:</label>
+        <input type="text" id="locationName" name="locationName" required>
+
+        <br>
+
+        <input type="submit" value="Add Location">
+    </form>
+</body>
+</html>
