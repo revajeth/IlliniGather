@@ -1,95 +1,64 @@
 /* styles.css */
 body {
-    font-family: Arial, sans-serif;
-    background-color: rgb(23, 41, 77);
-    text-align: center;
-  }
+  font-family: Arial, sans-serif;
+  background-color: rgb(23, 41, 77);
+  text-align: center;
+}
+
+h1 {
+  color: orange;
+  text-align: center;
+  font-size: 50px;
+}
+h2 {
+  color: white;
+  font: 1em sans-serif;
+  font-size: 20px;
+  padding-top: 50px;
+}
+h3 {
+  color: white;
+  font: 1em sans-serif;
+  font-size: 20px;
+}
+
+.updown {
+  padding: 5px 10px;
+  text-align: right;
+  word-spacing: 150px;
+
+  color: black;
+}
+.upvote {
+  color: black;
+  font-weight: 100;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+form {
+  color: white;
+  font-size: 25px;
+  padding-top: 50px;
   
-  h1 {
-    color: orange;
-    text-align: center;
-    font-size: 50px;
-  }
-  h2 {
-    color: white;
-    font: 1em sans-serif;
-    font-size: 20px;
-    padding-top: 50px;
-  }
-  h3 {
-    color: white;
-    font: 1em sans-serif;
-    font-size: 20px;
-  }
-
-  .updown {
-    padding: 5px 10px;
-    text-align: right;
-    word-spacing: 150px;
-
-    color: black;
-  }
-  .upvote {
-    color: black;
-    font-weight: 100;
-    padding: 5px 10px;
-    border-radius: 10px;
-  }
-
-  form {
-    color: white;
-    font-size: 25px;
-    padding-top: 50px;
+}
+.box {
+  width: 600px; 
+  height: 500px; 
+  background-color:rgb(236, 212, 180); 
+  padding: 10px;
+  padding-right: 50px; 
+  text-align: left; 
+  margin: 0 auto;
+  border-radius: 30px;
     
-  }
-  .box {
-    width: 600px; 
-    height: 500px; 
-    background-color:rgb(236, 212, 180); 
-    padding: 10px;
-    padding-right: 50px; 
-    text-align: left; 
-    margin: 0 auto;
-    border-radius: 30px;
-      
-    /* flex-direction: column; */
-  }
-  
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .circular-button-container {
-    text-align: center;
-    padding-top: 20px; /* Adjust the spacing as needed */
-  }
+  /* flex-direction: column; */
+}
 
-  .circular-button {
-    width: 100px;
-    height: 100px;
-    background-color: #007bff; /* Change to your desired button color */
-    border-radius: 50%; /* Makes it circular */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white; /* Text color */
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  .circular-button:hover {
-    background-color: #0056b3; /* Change to the hover color */
-  }
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-  .plus-sign::before {
-    content: "+";
-    font-size: 30px;
-  }
-
-
-  /* Add more styles as needed */
+/* Add more styles as needed */
