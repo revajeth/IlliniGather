@@ -21,6 +21,12 @@ body {
     font: 1em sans-serif;
     font-size: 20px;
   }
+  .favorite {
+    color: black;
+    font: 1em sans-serif;
+    font-size: 20px;
+    padding-top: 50px;
+  }
 
   .updown {
     padding: 5px 10px;
@@ -59,6 +65,10 @@ body {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+  }
+
+  .checked {
+  color: rgba(217, 170, 17, 0.571);
   }
 
 
