@@ -1,8 +1,33 @@
 /* styles.css */
 body {
     font-family: Arial, sans-serif;
-    background-color: rgb(23, 41, 77);
+    background-color: #17294d;
     text-align: center;
+  }
+
+
+
+  .nav-bar {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-evenly;
+    float: up;
+    background-color: #5a647b;
+    margin-bottom: 10px;
+  }
+
+  .nav-bar a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  .nav-bar a:hover {
+    background-color: #7785a3;
+    color: #f2f2f2;
   }
   
   h1 {
@@ -63,3 +88,79 @@ body {
   
   /* Add more styles as needed */
   
+
+  .add-button {
+    width: 11%;
+    float: right;
+  }
+
+  .add-button-circle {
+    width: 90%;
+    height: 0;
+    padding-bottom: 90%;
+    border-radius: 30%;
+    border: 5px solid #cfdcec;
+    overflow: hidden;
+
+    background: #5a647b;
+    box-shadow: 0 0 1px gray;
+  }
+
+  .add-button-circle:hover {
+    background: #5a647b;
+  }
+
+  .add-button a {
+    display: block;
+    width: 100%;
+    padding-top: 50%;
+    padding-bottom: 50%;
+    line-height: 1em;
+    margin-top: -0.5em;
+
+    text-align: center;
+    color: #e2eaf3;
+    font-family: Verdana;
+    font-size: 2em;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+
+
+  .round-button {
+    width: 11%;
+    float: right;
+  }
+
+  .round-button-circle {
+    width: 90%;
+    height: 0;
+    padding-bottom: 90%;
+    border-radius: 50%;
+    border: 5px solid #cfdcec;
+    overflow: hidden;
+
+    background: #5a647b;
+    box-shadow: 0 0 1px gray;
+  }
+
+  .round-button-circle:hover {
+    background: #30588e;
+  }
+
+  .round-button a {
+    display: block;
+    width: 100%;
+    padding-top: 50%;
+    padding-bottom: 50%;
+    line-height: 1em;
+    margin-top: -0.5em;
+
+    text-align: center;
+    color: #e2eaf3;
+    font-family: Verdana;
+    font-size: 2em;
+    font-weight: bold;
+    text-decoration: none;
+  }
