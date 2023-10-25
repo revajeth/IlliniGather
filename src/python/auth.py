@@ -11,10 +11,9 @@ db = client["illinigather"]
 collection = db["verification"]
 col = db["verified"]
 
+
 def sendVerification(email):
-
     code = random.randint(11111111, 99999999)
-
     try:
         server = smtplib.SMTP("smtp.gmail.com", 587)
         server.starttls()
@@ -51,7 +50,8 @@ def verified(email):
             return False
     except Exception:
         return False
-    
+
+
 def addToVerified(email):
     try:
         post = {'email': email}

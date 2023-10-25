@@ -18,7 +18,8 @@ app = Flask(__name__, template_folder=template_dir, static_folder=static_dir)
 def login():
     return render_template("login.html")
 
-@app.route('/verify/', methods = ['POST', 'GET'])
+
+@app.route('/verify/', methods=['POST', 'GET'])
 def verify():
     if request.method == 'GET':
         return "Invalid Request"
@@ -34,7 +35,7 @@ def verify():
             return "Failure to verify netid"
 
 
-@app.route('/home/', methods = ['POST', 'GET'])
+@app.route('/home/', methods=['POST', 'GET'])
 def home():
     if request.method == 'GET':
         return "Invalid Request"
