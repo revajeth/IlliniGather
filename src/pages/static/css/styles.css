@@ -13,7 +13,7 @@ body {
     justify-content: space-evenly;
     float: up;
     background-color: #5a647b;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
   }
 
   .nav-bar a {
@@ -45,6 +45,10 @@ body {
     color: white;
     font: 1em sans-serif;
     font-size: 20px;
+  }
+
+  .button {
+    padding: 0px;
   }
 
   .updown {
@@ -164,26 +168,4 @@ body {
     font-weight: bold;
     text-decoration: none;
   }
-  .checked {
-    color: rgba(217, 170, 17, 0.571);
-    }
-  .favorite {
-    color: black;
-    font: 1em sans-serif;
-    font-size: 20px;
-    padding-top: 50px;
-  }
 
-
-  .functionality-list {
-    list-style-type: none;
-    padding-left: 0;
-  }
-
-  .functionality-list li {
-    color: white;
-    font: 1em sans-serif;
-    font-size: 20px;
-    text-align: left;
-    padding-top: 20px; /* Adjust as needed for spacing */
-  }
