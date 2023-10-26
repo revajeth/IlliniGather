@@ -173,3 +173,17 @@ body {
     font-size: 20px;
     padding-top: 50px;
   }
+
+
+  .functionality-list {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .functionality-list li {
+    color: white;
+    font: 1em sans-serif;
+    font-size: 20px;
+    text-align: left;
+    padding-top: 20px; /* Adjust as needed for spacing */
+  }
