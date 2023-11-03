@@ -3,11 +3,16 @@
 <head>
     <title>Add Location</title>
     <link href="../static/css/styles.css" type="text/css" rel="stylesheet" />
+    <script>
+        function handleSubmit() {
+            window.location.href = "../templates/homepage.html";
+        }
+    </script>
 </head>
 <body>
     <h1>Add a New Location!</h1>
 
-    <form>
+    <form onsubmit= "handleSubmit(); return false;">
         <label for="category">Category:</label>
         <select id="category" name="category">
             <option value="restaurants">Restaurants</option>
