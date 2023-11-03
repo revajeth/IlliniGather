@@ -22,16 +22,62 @@
 
     <form>
         <label for="people">How many people are in the group?</label><br>
+        <input type="text" id="people" name="people"><br>
     </form>
 
     <form>
         <label for="place">How late do you want to stay out?</label><br>
-
+        <input type="text" id="place" name="place"><br>
     </form>
 
     <form>
-        <label for="thing">Do you want to do something more chill or more energetic?</label><br>
+        <label for="activity">Do you want to do something more chill or more energetic?</label><br>
         <input type="text" id="activity" name="activity"><br>
+    </form>
+
+    <form>
+        <label for="dressUp">Do you want to dress up and go out?</label><br>
+        <input type="text" id="dressUp" name="dressUp"><br>
+    </form>
+
+    <form>
+        <label for="dressComfy">Do you want to dress comfy and stay in?</label><br>
+        <input type="text" id="dressComfy" name="dressComfy"><br>
+    </form>
+
+    <form>
+        <label for="hungry">Are you hungry?</label><br>
+        <input type="text" id="hungry" name="hungry"><br>
+    </form>
+
+    <form>
+        <label for="dance">Do you want to dance?</label><br>
+        <input type="text" id="dance" name="dance"><br>
+    </form>
+
+    <form>
+        <label for="study">Do you want to study?</label><br>
+        <input type="text" id="study" name="study"><br>
+    </form>
+
+    <form>
+        <label for="onCampus">Do you want to stay on campus?</label><br>
+        <input type="text" id="onCampus" name="onCampus"><br>
+    </form>
+
+    <form>
+        <label for="offCampus">Do you want to go off campus?</label><br>
+        <input type="text" id="offCampus" name="offCampus"><br>
+    </form>
+
+    <form>
+        <label for="budget">What is your budget looking like?</label><br>
+        <input type="text" id="budget" name="budget"><br>
+    </form>
+
+    <form>
+        <label for="seasonal">Do you want to do something seasonal related?</label><br>
+        <input type="text" id="seasonal" name="seasonal"><br>
     </form>
 
     <br><br><br>
@@ -41,11 +87,9 @@
     <script>
         // Add an event listener to the button to generate the itinerary
         document.getElementById("generateButton").addEventListener("click", function () {
-
             const people = document.getElementById("people").value;
             const place = document.getElementById("place").value;
             const activity = document.getElementById("activity").value;
-
 
             alert("Hey! Since you are with " + people + " people, " + "and want to stay out until " + place + ", you should go to Bangkok Thai! It's very busy now and closes at 10.");
         });
