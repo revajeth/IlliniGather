@@ -22,35 +22,15 @@
 
     <form>
         <label for="people">How many people are in the group?</label><br>
-        <input type="text" id="people" name="people"><br>
     </form>
 
     <form>
         <label for="place">How late do you want to stay out?</label><br>
-        <input type="text" id="place" name="place"><br>
+
     </form>
 
     <form>
         <label for="thing">Do you want to do something more chill or more energetic?</label><br>
-        <input type="text" id="activity" name="activity"><br>
-    </form>
-
-    <br><br><br>
-
-    <button type="button" id="generateButton">Generate new Itinerary</button>
-
-    <script>
-        // Add an event listener to the button to generate the itinerary
-        document.getElementById("generateButton").addEventListener("click", function () {
-
-            const people = document.getElementById("people").value;
-            const place = document.getElementById("place").value;
-            const activity = document.getElementById("activity").value;
-
-
-            alert("Hey! Since you are with " + people + " people, " + "and want to stay out until " + place + ", you should go to Bangkok Thai! It's very busy now and closes at 10.");
-        });
-    </script>
 
 </body>
 
