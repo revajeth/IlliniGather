@@ -2,49 +2,55 @@
 <html>
 
 <head>
-    <title> IlliniGather</title>
+    <title>IlliniGather</title>
     <link href="../static/css/styles.css" type="text/css" rel="stylesheet" />
 </head>
 
-<div class="nav-bar">
-    <a class="home" href="../../homepage.html">Home</a>
-    <a class="about" href="../../about.html">About Us!</a>
-    <a class="itinerary" href="../../itinerary.html">Itinerary</a>
-    <a class="favorites" href="../../favorites.html">Favorites</a>
-</div>
+<body>
+    <div class="nav-bar">
+        <a class="home" href="../../homepage.html">Home</a>
+        <a class="about" href="../../about.html">About Us!</a>
+        <a class="itinerary" href="../../itinerary.html">Itinerary</a>
+        <a class="favorites" href="../../favorites.html">Favorites</a>
+    </div>
 
-<div class="logo">
-    <img src="../../Assets/logo.png" alt="logo">
-</div>
+    <div class="logo">
+        <img src="../../Assets/logo.png" alt="logo">
+    </div>
 
-<h3> Enter your info here and get an itinerary!</h3>
+    <h3>Enter your info here and get an itinerary!</h3>
 
     <form>
-        <label for="people">Question 1:</label><br>
-        <input type="text" id="netid" name="netid"><br>
+        <label for="people">How many people are in the group?</label><br>
+        <input type="text" id="people" name="people"><br>
     </form>
 
     <form>
-        <label for="place">Question 2:</label><br>
-        <input type="text" id="netid" name="netid"><br>
+        <label for="place">How late do you want to stay out?</label><br>
+        <input type="text" id="place" name="place"><br>
     </form>
 
     <form>
-        <label for="thing">Question 3:</label><br>
-        <input type="text" id="netid" name="netid"><br>
+        <label for="thing">Do you want to do something more chill or more energetic?</label><br>
+        <input type="text" id="activity" name="activity"><br>
     </form>
 
-    <form>
-        <label for="netid">Question 4:</label><br>
-        <input type="text" id="netid" name="netid"><br>
-    </form>
+    <br><br><br>
 
-    <form>
-        <label for="netid">Question 5:</label><br>
-        <input type="text" id="netid" name="netid"><br>
-    </form>
+    <button type="button" id="generateButton">Generate new Itinerary</button>
 
-    <button type="button">Generate new Itinerary</button>
+    <script>
+        // Add an event listener to the button to generate the itinerary
+        document.getElementById("generateButton").addEventListener("click", function () {
+
+            const people = document.getElementById("people").value;
+            const place = document.getElementById("place").value;
+            const activity = document.getElementById("activity").value;
+
+
+            alert("Hey! Since you are with " + people + " people, " + "and want to stay out until " + place + ", you should go to Bangkok Thai! It's very busy now and closes at 10.");
+        });
+    </script>
 
 </body>
 
