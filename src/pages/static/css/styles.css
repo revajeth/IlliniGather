@@ -5,8 +5,6 @@ body {
     text-align: center;
   }
 
-
-
   .nav-bar {
     margin-top: 40px;
     display: flex;
@@ -74,6 +72,19 @@ body {
   .box {
     width: 600px; 
     height: 500px; 
+    background-color:rgb(236, 212, 180); 
+    padding: 10px;
+    padding-right: 50px; 
+    text-align: left; 
+    margin: 0 auto;
+    border-radius: 30px;
+      
+    /* flex-direction: column; */
+  }
+
+  .box2 {
+    width: 600px; 
+    height: 1000px; 
     background-color:rgb(236, 212, 180); 
     padding: 10px;
     padding-right: 50px; 
