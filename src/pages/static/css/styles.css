@@ -169,3 +169,26 @@ body {
     text-decoration: none;
   }
 
+  .checked {
+    color: rgba(217, 170, 17, 0.571);
+    }
+  .favorite {
+    color: black;
+    font: 1em sans-serif;
+    font-size: 20px;
+    padding-top: 50px;
+  }
+
+  .chatbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px; 
+    height: 500px; 
+    background-color:rgb(236, 212, 180); 
+    padding: 10px;
+    margin: 0 auto;
+    border-radius: 30px;
+
+  }
+
