@@ -19,69 +19,207 @@
 
 <h3> Enter your info here and get an itinerary!</h3>
 
+
     <form>
         <label for="people">How many people are in the group?</label><br>
-        <input type="text" id="netid" name="netid"><br>
+    
+        <select id="people" name="people">
+            <option value="1">1</option>
+            <option value="2-3">2-3</option>
+            <option value="4-6">4-6</option>
+            <option value="7-10">7-10</option>
+            <option value="10+">10+</option>
+        </select>
+
     </form>
 
     <form>
-        <label for="place">How late do you want to stay out?</label><br>
-        <input type="text" id="netid" name="netid"><br>
+        <label for="time">What time are you looking to do this event?</label><br>
+    
+        <select id="time" name="time">
+            <option value="Morning">Morning</option>
+            <option value="Afternoon">Afternoon</option>
+            <option value="Evening">Evening</option>
+            <option value="Night">Night</option>
+        </select>
+
     </form>
 
     <form>
-        <label for="thing">Do you want to do something more chill or more energetic?</label><br>
-        <input type="text" id="netid" name="netid"><br>
+        <label for="energy">Do you want to do something more chill or more energetic?</label><br>
+    
+        <select id="energy" name="energy">
+            <option value="chill">Chill</option>
+            <option value="Energetic">Energetic</option>
+        </select>
+
     </form>
 
     <form>
-        <label for="netid">Do you want to dress up and go out?</label><br>
-        <input type="text" id="netid" name="netid"><br>
+        <label for="dress">Do you want to dress up or dress comfortably?</label><br>
+    
+        <select id="dress" name="dress">
+            <option value="Dress up">Dress up</option>
+            <option value="Dress comfortably">Dress comfortably</option>
+        </select>
+
     </form>
 
     <form>
-        <label for="netid">Do you want to dress comfy and stay in?</label><br>
-        <input type="text" id="netid" name="netid"><br>
+        <label for="where">Do you want to go out or stay in?</label><br>
+    
+        <select id="where" name="where">
+            <option value="Go out">Go out</option>
+            <option value="Stay in">Dress comfortably</option>
+        </select>
+
     </form>
 
     <form>
-        <label for="netid">Are you hungry?</label><br>
-        <input type="text" id="netid" name="netid"><br>
+        <label for="hunger">Are you hungry?</label><br>
+    
+        <select id="hunger" name="hunger">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+
     </form>
 
     <form>
-        <label for="netid">Do you want to dance?</label><br>
-        <input type="text" id="netid" name="netid"><br>
+        <label for="study">Are you planning to study?</label><br>
+    
+        <select id="study" name="study">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+
     </form>
 
     <form>
-        <label for="netid">Do you want to study?</label><br>
-        <input type="text" id="netid" name="netid"><br>
+        <label for="campus">Do you want to go off-campus or stay on campus?</label><br>
+    
+        <select id="campus" name="campus">
+            <option value="Off campus">Off campus</option>
+            <option value="On campus">On campus</option>
+        </select>
+
     </form>
 
     <form>
-        <label for="netid">Do you want to stay on campus?</label><br>
-        <input type="text" id="netid" name="netid"><br>
-    </form>
+        <label for="budget">What is your budget looking like?</label><br>
+    
+        <select id="budget" name="budget">
+            <option value="Less than 10 dollars">Less than 10 dollars</option>
+            <option value="$10-$20">$10-$20</option>
+            <option value="$20-$40">$20-$40</option>
+            <option value="$40+">$40+</option>
+        </select>
 
-    <form>
-        <label for="netid">Do you want to go off campus?</label><br>
-        <input type="text" id="netid" name="netid"><br>
     </form>
+    <body>
 
-    <form>
-        <label for="netid">What is your budget looking like?</label><br>
-        <input type="text" id="netid" name="netid"><br>
-    </form>
-
-    <form>
-        <label for="netid">Do you want to do something seasonal related?</label><br>
-        <input type="text" id="netid" name="netid"><br>
-    </form>
+    <button type="button" id="generateButton">Generate new Itinerary</button>
+   
 
     <br><br><br>
 
-    <button type="button">Generate new Itinerary</button>
+
+<script>
+document.getElementById("generateButton").addEventListener("click", function () {
+const people = document.getElementById("people").value;
+const timeOfDay = document.getElementById("time").value;
+const activityType = document.getElementById("energy").value;
+const dressCode = document.getElementById("dress").value;
+const locationPreference = document.getElementById("where").value;
+const hunger = document.getElementById("hunger").value;
+const study = document.getElementById("study").value;
+const campusPreference = document.getElementById("campus").value;
+const budget = document.getElementById("budget").value;
+
+let itinerary = "Hey! Since you are with " + people + " people and want to do something in the " + timeOfDay + ", here's your itinerary:\n";
+
+if (activityType.toLowerCase() === "chill") {
+    if (locationPreference.toLowerCase() === "stay in") {
+        if (dressCode.toLowerCase() === "dress up") {
+            if (budget === "Less than 10 dollars") {
+                if (people === "1") {
+                    itinerary += "For a chill and dressed-up night on a budget, you can try ordering from McDonald's, Subway, Chipotle, Panda Express, Jurassic Grill, or Burrito King, and try eating it on the quad or at home!";
+                } else {
+                    itinerary += "For a chill and dressed-up night on a budget, you can try a homemade gourmet dinner and enjoy a movie night with your group at home.";
+                }
+            } else {
+                if (people === "1") {
+                    itinerary += "For a chill and dressed-up night out, you should ";
+                } else {
+                    itinerary += "For a chill and dressed-up night out, ";
+                }
+            }
+        } else {
+            if (people === "1") {
+                itinerary += "For a chill and comfy night, ";
+            } else {
+                itinerary += "For a chill and comfy night, ";
+            }
+        }
+    } else {
+        if (dressCode.toLowerCase() === "dress up") {
+            if (people === "1") {
+                itinerary += "For a chill and dressed-up outing in the " + timeOfDay + ", you can you can try ordering from McDonald's, Subway, Chipotle, Panda Express, Jurassic Grill, or Burrito King, and try eating it on the quad or at home!";
+            } else {
+                itinerary += "For a chill and dressed-up outing in the " + timeOfDay + ", you can you can try ordering from McDonald's, Subway, Chipotle, Panda Express, Jurassic Grill, or Burrito King, and try eating it on the quad with friends, eat at the restaurant, or go to someone's apartment!";
+            }
+        } else {
+            if (people === "1") {
+                itinerary += "For a chill and comfy outing in the " + timeOfDay + ", ";
+            } else {
+                itinerary += "For a chill and comfy outing in the " + timeOfDay + ", ";
+            }
+        }
+    }
+} else if (activityType.toLowerCase() === "energetic") {
+    if (locationPreference.toLowerCase() === "go out") {
+        if (dressCode.toLowerCase() === "dress up") {
+            if (budget === "Less than 10 dollars") {
+                if (people === "1") {
+                    itinerary += "For an energetic and dressed-up night on a budget,  in the " + timeOfDay + " ";
+                } else {
+                    itinerary += "For an energetic and dressed-up night on a budget,  in the " + timeOfDay + " ";
+                }
+            } else {
+                if (people === "1") {
+                    itinerary += "For an energetic and dressed-up night in the " + timeOfDay + "";
+                } else {
+                    itinerary += "For an energetic and dressed-up night in the " + timeOfDay + ", ";
+                }
+            }
+        } else {
+            if (people === "1") {
+                itinerary += "For an energetic and comfy night out in the " + timeOfDay + ", .";
+            } else {
+                itinerary += "For an energetic and comfy night out in the " + timeOfDay + ", .";
+            }
+        }
+    } else {
+        if (dressCode.toLowerCase() === "dress up") {
+            if (people === "1") {
+                itinerary += "For an energetic and dressed-up evening at home in the " + timeOfDay + ", ";
+            } else {
+                itinerary += "For an energetic and dressed-up evening at home in the " + timeOfDay + ", .";
+            }
+        } else {
+            if (people === "1") {
+                itinerary += "For an energetic and comfy evening at home in the " + timeOfDay + ",.";
+            } else {
+                itinerary += "For an energetic and comfy evening at home in the " + timeOfDay + ", .";
+            }
+        }
+    }
+}
+
+    alert(itinerary);
+});
+</script>
+
 
 </body>
 
