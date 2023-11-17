@@ -117,6 +117,103 @@
 
     <button type="button" id="generateButton">Generate new Itinerary</button>
 
+    <script>
+document.getElementById("generateButton").addEventListener("click", function () {
+    const people = document.getElementById("people").value;
+    const timeOfDay = document.getElementById("time").value;
+    const activityType = document.getElementById("energy").value;
+    const dressCode = document.getElementById("dress").value;
+    const locationPreference = document.getElementById("where").value;
+    const hunger = document.getElementById("hunger").value;
+    const study = document.getElementById("study").value;
+    const campusPreference = document.getElementById("campus").value;
+    const budget = document.getElementById("budget").value;
+
+    let itinerary = "Hey! Since you are with " + people + " people and want to do something in the " + timeOfDay + ", here's your itinerary:\n";
+
+    if (activityType.toLowerCase() === "chill") {
+        if (locationPreference.toLowerCase() === "stay in") {
+            if (dressCode.toLowerCase() === "dress up") {
+                if (budget === "Less than 10 dollars") {
+                    if (people === "1") {
+                        itinerary += "For a chill and dressed-up night on a budget, you can try ordering from McDonald's, Subway, Chipotle, Panda Express, Jurassic Grill, or Burrito King, and try eating it on the quad or at home!";
+                    } else {
+                        itinerary += "For a chill and dressed-up night on a budget, you can try a homemade gourmet dinner and enjoy a movie night with your group at home.";
+                    }
+                } else {
+                    if (people === "1") {
+                        itinerary += "For a chill and dressed-up night out, you should ";
+                    } else {
+                        itinerary += "For a chill and dressed-up night out, ";
+                    }
+                }
+            } else {
+                if (people === "1") {
+                    itinerary += "For a chill and comfy night, ";
+                } else {
+                    itinerary += "For a chill and comfy night, ";
+                }
+            }
+        } else {
+            if (dressCode.toLowerCase() === "dress up") {
+                if (people === "1") {
+                    itinerary += "For a chill and dressed-up outing in the " + timeOfDay + ", you can you can try ordering from McDonald's, Subway, Chipotle, Panda Express, Jurassic Grill, or Burrito King, and try eating it on the quad or at home!";
+                } else {
+                    itinerary += "For a chill and dressed-up outing in the " + timeOfDay + ", you can you can try ordering from McDonald's, Subway, Chipotle, Panda Express, Jurassic Grill, or Burrito King, and try eating it on the quad with friends, eat at the restaurant, or go to someone's apartment!";
+                }
+            } else {
+                if (people === "1") {
+                    itinerary += "For a chill and comfy outing in the " + timeOfDay + ", ";
+                } else {
+                    itinerary += "For a chill and comfy outing in the " + timeOfDay + ", ";
+                }
+            }
+        }
+    } else if (activityType.toLowerCase() === "energetic") {
+        if (locationPreference.toLowerCase() === "go out") {
+            if (dressCode.toLowerCase() === "dress up") {
+                if (budget === "Less than 10 dollars") {
+                    if (people === "1") {
+                        itinerary += "For an energetic and dressed-up night on a budget,  in the " + timeOfDay + " ";
+                    } else {
+                        itinerary += "For an energetic and dressed-up night on a budget,  in the " + timeOfDay + " ";
+                    }
+                } else {
+                    if (people === "1") {
+                        itinerary += "For an energetic and dressed-up night in the " + timeOfDay + "";
+                    } else {
+                        itinerary += "For an energetic and dressed-up night in the " + timeOfDay + ", ";
+                    }
+                }
+            } else {
+                if (people === "1") {
+                    itinerary += "For an energetic and comfy night out in the " + timeOfDay + ", .";
+                } else {
+                    itinerary += "For an energetic and comfy night out in the " + timeOfDay + ", .";
+                }
+            }
+        } else {
+            if (dressCode.toLowerCase() === "dress up") {
+                if (people === "1") {
+                    itinerary += "For an energetic and dressed-up evening at home in the " + timeOfDay + ", ";
+                } else {
+                    itinerary += "For an energetic and dressed-up evening at home in the " + timeOfDay + ", .";
+                }
+            } else {
+                if (people === "1") {
+                    itinerary += "For an energetic and comfy evening at home in the " + timeOfDay + ",.";
+                } else {
+                    itinerary += "For an energetic and comfy evening at home in the " + timeOfDay + ", .";
+                }
+            }
+        }
+    }
+
+    alert(itinerary);
+});
+    </script>
+
+
 
 </body>
 
