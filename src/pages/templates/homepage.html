@@ -1,46 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="../static/css/styles.css" type="text/css" rel="stylesheet" />
+   <link href="../static/css/styles.css" type="text/css" rel="stylesheet" />
 </head>
 
+
 <div class="nav-bar">
-    <a class="home" href="../templates/homepage.html">Home</a>
-    <a class="about" href="../templates/about.html">About Us!</a>
-    <a class="itinerary" href="../Itinerary/itinerary.html">Itinerary</a>
-    <a class="friends" href="../templates/friends.html">Friends</a>
+   <a class="home" href="../templates/homepage.html">Home</a>
+   <a class="about" href="../templates/about.html">About Us!</a>
+   <a class="itinerary" href="../Itinerary/itinerary.html">Itinerary</a>
+   <a class="friends" href="../templates/friends.html">Friends</a>
 </div>
 
+
 <div class="logo">
-    <img src="/src/images/logo.png" alt="logo">
+   <img src="/src/images/logo.png" alt="logo">
 </div>
+
 
 <body>
 
- <h3> Unsure what to do today? Ask IlliniGather and hang out with fellow Illini on campus!</h3>
- <form>
+
+<h3> Unsure what to do today? Ask IlliniGather and hang out with fellow Illini on campus!</h3>
+<form>
+
 
 <a href="generateItinerary.html">
- <button type="button">Generate new Itinerary</button>
- </a>
+<button type="button">Generate new Itinerary</button>
+</a>
 
 
- </form>
- <h2> Whats happening now?</h2>
- <div class="box">
-    <br><br><p class="updown">Upvote Downvote</p>
-    <h4>Top 1 Event Going On Right Now &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote"><b>&uarr;</b></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote"><b>&darr;</b></button></h4><br>
-    <h4>Top 2 Event Going On Right Now &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote"><b>&uarr;</b></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote"><b>&darr;</b></button></h4><br>
-    <h4>Top 3 Event Going On Right Now &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote"><b>&uarr;</b></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote"><b>&darr;</b></button></h4><br>
-    <h4>Top 4 Event Going On Right Now &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote"><b>&uarr;</b></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote"><b>&darr;</b></button></h4><br>
-    <h4>Top 5 Event Going On Right Now &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote"><b>&uarr;</b></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote"><b>&darr;</b></button></h4><br>
+<script>
+   function getevent1() {
+       let event1 = localStorage.getItem("locationName");
+       document.getElementById('one').innerText = event1;
+       return event1;
+   }
+   // window.onload() = function() {
+   //     getevent1();
+   // }
+   window.addEventListener("load", (event) => {
+       getevent1();
+       });
+</script>
+
+
+
+
+</form>
+<h2> Whats happening now?</h2>
+<div class="box">
+   <br><br><p class="updown">Upvote Downvote</p>
+   <h4>Top 1 Event Going On Right Now<h4><button class="upvote"><b>&uarr;</b></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote"><b>&darr;</b></button><br>
+   <h4>Top 1 Event Going On Right Now<h4><button class="upvote"><b>&uarr;</b></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote"><b>&darr;</b></button><br>
+   <h4>Top 1 Event Going On Right Now<h4><button class="upvote"><b>&uarr;</b></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote"><b>&darr;</b></button><br>
+   <h4>Top 1 Event Going On Right Now<h4><button class="upvote"><b>&uarr;</b></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote"><b>&darr;</b></button><br>
+   <h4 id="one">Top 1 Event Going On Right Now<h4><button class="upvote"><b>&uarr;</b></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote"><b>&darr;</b></button><br>
+
 
 <div class="add-button">
-    <div class="round-button-circle"><a href="../templates/addlocation.html" class="round-button">+</a></div>
+   <div class="round-button-circle"><a href="../templates/addlocation.html" class="round-button">+</a></div>
 </div>
 
+
 <div class="round-button">
-    <div class="round-button-circle"><a href="../templates/allLocations.html" class="round-button">...</a></div>
+   <div class="round-button-circle"><a href="../templates/allLocations.html" class="round-button">...</a></div>
 </div>
-    
+  
 </div>
