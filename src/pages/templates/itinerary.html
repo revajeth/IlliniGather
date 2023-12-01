@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>About Us - IlliniGather</title>
+    <link href="../static/css/styles.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="nav-bar">
+        <a class="home" href="../templates/homepage.html">Home</a>
+        <a class="about" href="../templates/about.html">About Us!</a>
+        <a class="itinerary" href="../templates/itinerary.html">Itinerary</a>
+        <a class="friends" href="../templates/friends.html">Friends</a>
+    </div>
+
+    <div class="container">
+        <h1>Your Saved Itineraries</h1>
+        <h2>Here, you can see your past itineraries -- if you're really stumped, look at things you've done in the past!
+        </h2>
+
+        <div id="pastItineraries">
+            <!-- Past itineraries will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1, c.length);
+                }
+                if (c.indexOf(nameEQ) == 0) {
+                    return c.substring(nameEQ.length, c.length);
+                }
+            }
+            return null;
+        }
+
+        window.onload = function () {
+            var pastItineraries = getCookie("pastItineraries");
+            if (pastItineraries) {
+                pastItineraries = JSON.parse(pastItineraries);
+                var itinerariesContainer = document.getElementById("pastItineraries");
+                pastItineraries.forEach(function (itinerary, index) {
+                    var itineraryElement = document.createElement("p");
+                    itineraryElement.textContent = "Itinerary " + (index + 1) + ": " + itinerary;
+                    itinerariesContainer.appendChild(itineraryElement);
+                });
+            }
+        };
+
+        document.getElementById("generateButton").addEventListener("click", function () {
+            // Existing itinerary generation code (from generateItinerary page)
+            // ...
+            document.getElementById("generateButton").addEventListener("click", function () {
+                const people = document.getElementById("people").value || "Any";
+                const timeOfDay = document.getElementById("time").value || "Any";
+                const activityType = document.getElementById("energy").value || "Any";
+                const dressCode = document.getElementById("dress").value || "Any";
+                const locationPreference = document.getElementById("where").value || "Any";
+                const hunger = document.getElementById("hunger").value || "Any";
+                const study = document.getElementById("study").value || "Any";
+                const campusPreference = document.getElementById("campus").value || "Any";
+                const budget = document.getElementById("budget").value || "Any";
+
+                let itinerary = "Hey! Since you are with " + people + " people and want to do something in the " + timeOfDay + ", here's your itinerary:\n";
+
+                if (locationPreference == "Stay in") {
+                    if (hunger == "No") {
+                        if (study == "Yes") {
+                            if (budget == "Less than 10 dollars") {
+                                if (campusPreference == "On campus") {
+                                    itinerary += "You should consider going to Cafe Bene, Brewlab, CIF, Grainger, Main Library, ACES Library, or Espresso Royale! They are great study spots on campus.";
+                                } else {
+                                    itinerary += "You should consider going to The Literary, Champaign Public Library, Espresso Royale, Cafe Kopi, or Cafe Paradiso! They are great study spots off campus.";
+                                }
+                            }
+                        }
+                    }
+                } else if (activityType == "Chill") {
+                    if (dressCode == "Dress comfortably") {
+                        if (locationPreference == "On campus") {
+                            if (budget == "Less than 10 dollars") {
+                                itinerary += "You could go bowling or visit the arcade at the Union, have a picnic on the quad, or go ice skating at UI Ice arena.";
+                            }
+                        } else if (locationPreference == "Off campus") {
+                            if (budget == "Less than 10 dollars") {
+                                itinerary += "You might enjoy going to a boneyard creek, going on a veo ride, taking a walk outside, or having a picnic on the quad.";
+                            }
+                        }
+                    }
+                } else if (activityType == "Energetic") {
+                    if (timeOfDay == "Night") {
+                        if (locationPreference == "Off campus") {
+                            if (budget == "$10-$20") {
+                                itinerary += "For a night out, consider visiting Kams, Red Lion, or Joes";
+                            }
+                        }
+                    }
+                } else if (hunger == "Yes") {
+                    if (study == "No") {
+                        if (campusPreference == "On campus") {
+                            if (budget == "$10-$20") {
+                                itinerary += "You should consider going to Canes, Basil Thai, Bangkok Thai, Bread Company, Dominos Pizza, Mia Zas, Shawarma Joint, Dubai Grill, or Potbelly for a meal.";
+                            }
+                        }
+                    }
+                } else if (activityType == "Go out") {
+                    if (hunger == "No") {
+                        if (study == "No") {
+                            if (campusPreference == "Off campus") {
+                                if (budget == "$10-$20") {
+                                    itinerary += "Consider watching a movie, taking an art lesson in downtown Champaign, going to Spurlock Museum, or going to Krannert Art Center for an outing.";
+                                }
+                            }
+                        }
+                    }
+                }
+                alert(itinerary);
+            });
+
+            // save generated itinerary to cookies
+            var generatedItinerary = "Generated Itinerary: " + itinerary;
+            var pastItineraries = getCookie("pastItineraries");
+            if (pastItineraries) {
+                pastItineraries = JSON.parse(pastItineraries);
+            } else {
+                pastItineraries = [];
+            }
+            pastItineraries.push(generatedItinerary);
+            setCookie("pastItineraries", JSON.stringify(pastItineraries), 7); // save past itineraries for 7 days
+
+            alert(generatedItinerary);
+        });
+    </script>
+
+
+
+
+</body>
+
+<ul class="itinerary-list">
+    <li> You should consider going to Cafe Bene, Brewlab, CIF, Grainger, Main Library, ACES Library, or Espresso Royale! They
+    are great study spots on campus.</li>
+
+    <li> You could go bowling or visit the arcade at the Union, have a picnic on the quad, or go ice skating at UI Ice arena.</li>
+
+    <li> Consider watching a movie, taking an art lesson in downtown Champaign, going to Spurlock Museum, or going to Krannert
+    Art Center for an outing. </li>
+</ul>
+
+
+</html>

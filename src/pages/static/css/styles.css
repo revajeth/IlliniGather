@@ -100,6 +100,14 @@ body {
     margin: 0 auto;
     padding: 20px;
   }
+
+  .functionality-list {
+    color: white;
+  }
+
+  .itinerary-list {
+    color: white;
+  }
   
   /* Add more styles as needed */
   
