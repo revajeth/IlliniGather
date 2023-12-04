@@ -63,11 +63,11 @@
 <h2> Whats happening now?</h2>
 <div class="box_home">
    <br><br>
-   <h4>Top 1 Event Going On Right Now<h4><button class="upvote"><b>&uarr;</b></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote"><b>&darr;</b></button><br>
-   <h4>Top 2 Event Going On Right Now<h4><button class="upvote"><b>&uarr;</b></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote"><b>&darr;</b></button><br>
-   <h4>Top 3 Event Going On Right Now<h4><button class="upvote"><b>&uarr;</b></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote"><b>&darr;</b></button><br>
-   <h4 id="two">Top 4 Event Going On Right Now<h4><button class="upvote"><b>&uarr;</b></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote"><b>&darr;</b></button><br>
-   <h4 id="one">Top 5 Event Going On Right Now<h4><button class="upvote"><b>&uarr;</b></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote"><b>&darr;</b></button><br>
+   <h4>Top 1 Event Going On Right Now<h4><button class="upvote" onclick="vote(this, 1, 1)"><b>&uarr;</b></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span id="voteCount1">0</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote" onclick="vote(this, 1, -1)"><b>&darr;</b></button><br>
+   <h4>Top 2 Event Going On Right Now<h4><button class="upvote" onclick="vote(this, 2, 1)"><b>&uarr;</b></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span id="voteCount2">0</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote" onclick="vote(this, 2, -1)"><b>&darr;</b></button><br>
+   <h4>Top 3 Event Going On Right Now<h4><button class="upvote" onclick="vote(this, 3, 1)"><b>&uarr;</b></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span id="voteCount3">0</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote" onclick="vote(this, 3, -1)"><b>&darr;</b></button><br>
+   <h4 id="two">Top 4 Event Going On Right Now<h4><button class="upvote" onclick="vote(this, 4, 1)"><b>&uarr;</b></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span id="voteCount4">0</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote" onclick="vote(this, 4, -1)"><b>&darr;</b></button><br>
+   <h4 id="one">Top 5 Event Going On Right Now<h4><button class="upvote" onclick="vote(this, 5, 1)"><b>&uarr;</b></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span id="voteCount5">0</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote" onclick="vote(this, 5, -1)"><b>&darr;</b></button><br>
 
  </form>
  
@@ -84,15 +84,36 @@
     function vote(button, eventId, value) {
         var voteCountElement = document.getElementById("voteCount" + eventId);
         var currentCount = parseInt(voteCountElement.textContent);
-        var hasVoted = localStorage.getItem("vote" + eventId);
         
-        // if (hasVoted && value) {
-        //     alert("You have already voted for this event!");
-        //     return;
-        // }
+        // Get the current vote state from a data attribute
+        var currentVoteState = parseInt(voteCountElement.getAttribute("data-vote-state")) || 0;
+
+        // Check if the user has already voted
+        if (currentVoteState) {
+            // If the user has already voted in the opposite direction, allow the new vote
+            if (currentVoteState == -value) {
+                voteCountElement.textContent = currentCount + value * 2;
+                voteCountElement.setAttribute("data-vote-state", value);
+                return;
+            } else {
+                // If the user has already voted or tries to vote in the same direction, show an alert
+                alert("You have already voted for this event!");
+                return;
+            }
+        }
+
+        // Update the vote count and save the vote state
         var newCount = currentCount + value;
         voteCountElement.textContent = newCount;
-        localStorage.setItem("vote" + eventId, "true");
+        voteCountElement.setAttribute("data-vote-state", value);
+    }
+    function resetVotes(eventId) {
+        var voteCountElement = document.getElementById("voteCount" + eventId);
+        var originalCount = 0; // Set the original count value here
+
+        // Update the vote count and reset the vote state
+        voteCountElement.textContent = originalCount;
+        voteCountElement.setAttribute("data-vote-state", 0);
     }
 </script>
     
