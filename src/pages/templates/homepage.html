@@ -32,15 +32,25 @@
 
 <script>
    function getevent1() {
-       let event1 = localStorage.getItem("locationName");
+       let event1 = localStorage.getItem("locationName1");
        document.getElementById('one').innerText = event1;
        return event1;
    }
-   // window.onload() = function() {
-   //     getevent1();
-   // }
+
    window.addEventListener("load", (event) => {
        getevent1();
+       });
+</script>
+
+<script>
+   function getevent2() {
+       let event2 = localStorage.getItem("locationName2");
+       document.getElementById('two').innerText = event2;
+       return event2;
+   }
+
+   window.addEventListener("load", (event) => {
+       getevent2();
        });
 </script>
 
@@ -49,13 +59,13 @@
 
 </form>
 <h2> Whats happening now?</h2>
-<div class="box">
-   <br><br><p class="updown">Upvote Downvote</p>
+<div class="box_home">
+   <br><br>
    <h4>Top 1 Event Going On Right Now<h4><button class="upvote"><b>&uarr;</b></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote"><b>&darr;</b></button><br>
-   <h4>Top 1 Event Going On Right Now<h4><button class="upvote"><b>&uarr;</b></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote"><b>&darr;</b></button><br>
-   <h4>Top 1 Event Going On Right Now<h4><button class="upvote"><b>&uarr;</b></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote"><b>&darr;</b></button><br>
-   <h4>Top 1 Event Going On Right Now<h4><button class="upvote"><b>&uarr;</b></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote"><b>&darr;</b></button><br>
-   <h4 id="one">Top 1 Event Going On Right Now<h4><button class="upvote"><b>&uarr;</b></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote"><b>&darr;</b></button><br>
+   <h4>Top 2 Event Going On Right Now<h4><button class="upvote"><b>&uarr;</b></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote"><b>&darr;</b></button><br>
+   <h4>Top 3 Event Going On Right Now<h4><button class="upvote"><b>&uarr;</b></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote"><b>&darr;</b></button><br>
+   <h4 id="two">Top 4 Event Going On Right Now<h4><button class="upvote"><b>&uarr;</b></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote"><b>&darr;</b></button><br>
+   <h4 id="one">Top 5 Event Going On Right Now<h4><button class="upvote"><b>&uarr;</b></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote"><b>&darr;</b></button><br>
 
 
 <div class="add-button">

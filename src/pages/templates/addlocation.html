@@ -35,9 +35,16 @@
        <h id="demo"></h>
        <script>
            function value() {
-               var locationName = document.getElementById("locationName").value;
-               localStorage.setItem("locationName", locationName)
-               document.getElementById("demo").innerText = locationName;
+                var locationName1 = localStorage.getItem("locationName1");
+                var locationName2 = localStorage.getItem("locationName2");
+                
+                if (locationName1 != null) {
+                    localStorage.setItem("locationName2", locationName1);
+                }
+                locationName1 = document.getElementById("locationName").value;
+               
+                localStorage.setItem("locationName1", locationName1);
+            //    localStorage.clear();
            }
        </script>
 
