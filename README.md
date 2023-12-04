@@ -37,5 +37,9 @@ Installation Instructions:
 4. Go to local host in web browser
 
 Group roles:
+
 Ryed: Backend, testing, authentication
+
 Rhea: Frontend pages, Top Events, Friends page
+
+Raunak: Frontend pages, Homepage, About page
