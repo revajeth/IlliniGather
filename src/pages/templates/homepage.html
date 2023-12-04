@@ -6,15 +6,17 @@
 
 
 <div class="nav-bar">
-   <a class="home" href="../templates/homepage.html">Home</a>
-   <a class="about" href="../templates/about.html">About Us!</a>
-   <a class="itinerary" href="../Itinerary/itinerary.html">Itinerary</a>
-   <a class="friends" href="../templates/friends.html">Friends</a>
+
+    <a class="home" href="../templates/homepage.html">Home</a>
+    <a class="about" href="../templates/about.html">About Us!</a>
+    <a class="itinerary" href="../templates/itinerary.html">Itinerary</a>
+    <a class="friends" href="../templates/friends.html">Friends</a>
 </div>
 
 
 <div class="logo">
-   <img src="/src/images/logo.png" alt="logo">
+
+<img src="../../Assets/logo.png" alt="logo">
 </div>
 
 
@@ -67,7 +69,8 @@
    <h4 id="two">Top 4 Event Going On Right Now<h4><button class="upvote"><b>&uarr;</b></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote"><b>&darr;</b></button><br>
    <h4 id="one">Top 5 Event Going On Right Now<h4><button class="upvote"><b>&uarr;</b></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote"><b>&darr;</b></button><br>
 
-
+ </form>
+ 
 <div class="add-button">
    <div class="round-button-circle"><a href="../templates/addlocation.html" class="round-button">+</a></div>
 </div>
@@ -76,5 +79,21 @@
 <div class="round-button">
    <div class="round-button-circle"><a href="../templates/allLocations.html" class="round-button">...</a></div>
 </div>
-  
+
+<script>
+    function vote(button, eventId, value) {
+        var voteCountElement = document.getElementById("voteCount" + eventId);
+        var currentCount = parseInt(voteCountElement.textContent);
+        var hasVoted = localStorage.getItem("vote" + eventId);
+        
+        // if (hasVoted && value) {
+        //     alert("You have already voted for this event!");
+        //     return;
+        // }
+        var newCount = currentCount + value;
+        voteCountElement.textContent = newCount;
+        localStorage.setItem("vote" + eventId, "true");
+    }
+</script>
+    
 </div>
