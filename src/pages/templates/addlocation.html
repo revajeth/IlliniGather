@@ -1,34 +1,62 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Add Location</title>
-    <link href="../static/css/styles.css" type="text/css" rel="stylesheet" />
-    <script>
-        function handleSubmit() {
-            window.location.href = "../templates/homepage.html";
-        }
-    </script>
+   <title>Add Location</title>
+   <link href="../static/css/styles.css" type="text/css" rel="stylesheet" />
+
+
+  <script>
+       function handleSubmit() {
+           value();
+           window.location.href = "../templates/homepage.html";
+       }
+   </script>
 </head>
 <body>
-    <h1>Add a New Location!</h1>
+   <h1>Add a New Location!</h1>
 
-    <form onsubmit= "handleSubmit(); return false;">
-        <label for="category">Category:</label>
-        <select id="category" name="category">
-            <option value="restaurants">Restaurants</option>
-            <option value="study_spots">Study Spots</option>
-            <option value="nightlife">Nightlife</option>
-            <option value="events">Events</option>
-        </select>
 
-        <br>
+   <form onsubmit= "handleSubmit(); return false;">
+       <label for="category">Category:</label>
+       <select id="category" name="category">
+           <option value="restaurants">Restaurants</option>
+           <option value="study_spots">Study Spots</option>
+           <option value="nightlife">Nightlife</option>
+           <option value="events">Events</option>
+       </select>
 
-        <label for="locationName">Location Name:</label>
-        <input type="text" id="locationName" name="locationName" required>
 
-        <br>
+       <br>
 
-        <input type="submit" value="Add Location">
-    </form>
+
+       <label for="locationName">Location Name:</label>
+       <input type="text" id="locationName" name="locationName" required>
+       <h id="demo"></h>
+       <script>
+           function value() {
+                var locationName1 = localStorage.getItem("locationName1");
+                var locationName2 = localStorage.getItem("locationName2");
+                
+                if (locationName1 != null) {
+                    localStorage.setItem("locationName2", locationName1);
+                }
+                locationName1 = document.getElementById("locationName").value;
+               
+                localStorage.setItem("locationName1", locationName1);
+            //    localStorage.clear();
+           }
+       </script>
+
+
+       <br>
+
+
+      
+
+
+       <input type="submit" value="Add Location">
+   </form>
 </body>
 </html>
+

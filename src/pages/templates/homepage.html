@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="../static/css/styles.css" type="text/css" rel="stylesheet" />
+   <link href="../static/css/styles.css" type="text/css" rel="stylesheet" />
 </head>
 
+
 <div class="nav-bar">
+
     <a class="home" href="../templates/homepage.html">Home</a>
     <a class="about" href="../templates/about.html">About Us!</a>
     <a class="itinerary" href="../templates/itinerary.html">Itinerary</a>
@@ -13,76 +15,71 @@
 
 
 <div class="logo">
+
 <img src="../../Assets/logo.png" alt="logo">
 </div>
 
+
 <body>
 
- <h3> Unsure what to do today? Ask IlliniGather and hang out with fellow Illini on campus!</h3>
- <form>
+
+<h3> Unsure what to do today? Ask IlliniGather and hang out with fellow Illini on campus!</h3>
+<form>
+
 
 <a href="generateItinerary.html">
- <button type="button">Generate new Itinerary</button>
- </a>
+<button type="button">Generate new Itinerary</button>
+</a>
 
+
+<script>
+   function getevent1() {
+       let event1 = localStorage.getItem("locationName1");
+       document.getElementById('one').innerText = event1;
+       return event1;
+   }
+
+   window.addEventListener("load", (event) => {
+       getevent1();
+       });
+</script>
+
+<script>
+   function getevent2() {
+       let event2 = localStorage.getItem("locationName2");
+       document.getElementById('two').innerText = event2;
+       return event2;
+   }
+
+   window.addEventListener("load", (event) => {
+       getevent2();
+       });
+</script>
+
+
+
+
+</form>
+<h2> Whats happening now?</h2>
+<div class="box_home">
+   <br><br>
+   <h4>Top 1 Event Going On Right Now<h4><button class="upvote"><b>&uarr;</b></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote"><b>&darr;</b></button><br>
+   <h4>Top 2 Event Going On Right Now<h4><button class="upvote"><b>&uarr;</b></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote"><b>&darr;</b></button><br>
+   <h4>Top 3 Event Going On Right Now<h4><button class="upvote"><b>&uarr;</b></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote"><b>&darr;</b></button><br>
+   <h4 id="two">Top 4 Event Going On Right Now<h4><button class="upvote"><b>&uarr;</b></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote"><b>&darr;</b></button><br>
+   <h4 id="one">Top 5 Event Going On Right Now<h4><button class="upvote"><b>&uarr;</b></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="upvote"><b>&darr;</b></button><br>
 
  </form>
- <h2> Whats happening now?</h2>
- <div class="box">
-    <br><br><p class="updown">Upvote Downvote</p>
-    <h4>Top 1 Event Going On Right Now
-        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-        <button class="upvote" onclick="vote(this, 1, 1)"><b>&uarr;</b></button>
-        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-        <span id="voteCount1">0</span>
-        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-        <button class="upvote" onclick="vote(this, 1, -1)"><b>&darr;</b></button>
-    </h4><br>
-
-    <h4>Top 2 Event Going On Right Now
-        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-        <button class="upvote" onclick="vote(this, 2, 1)"><b>&uarr;</b></button>
-        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-        <span id="voteCount2">0</span>
-        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-        <button class="upvote" onclick="vote(this, 2, -1)"><b>&darr;</b></button>
-    </h4><br>
-
-    <h4>Top 3 Event Going On Right Now
-        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-        <button class="upvote" onclick="vote(this, 3, 1)"><b>&uarr;</b></button>
-        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-        <span id="voteCount3">0</span>
-        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-        <button class="upvote" onclick="vote(this, 3, -1)"><b>&darr;</b></button>
-    </h4><br>
-
-    <h4>Top 4 Event Going On Right Now
-        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-        <button class="upvote" onclick="vote(this, 4, 1)"><b>&uarr;</b></button>
-        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-        <span id="voteCount4">0</span>
-        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-        <button class="upvote" onclick="vote(this, 4, -1)"><b>&darr;</b></button>
-    </h4><br>
-
-    <h4>Top 5 Event Going On Right Now
-        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-        <button class="upvote" onclick="vote(this, 5, 1)"><b>&uarr;</b></button>
-        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-        <span id="voteCount5">0</span>
-        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-        <button class="upvote" onclick="vote(this, 5, -1)"><b>&darr;</b></button>
-    </h4><br>
-   
-
+ 
 <div class="add-button">
-    <div class="round-button-circle"><a href="../templates/addlocation.html" class="round-button">+</a></div>
+   <div class="round-button-circle"><a href="../templates/addlocation.html" class="round-button">+</a></div>
 </div>
+
 
 <div class="round-button">
-    <div class="round-button-circle"><a href="../templates/allLocations.html" class="round-button">...</a></div>
+   <div class="round-button-circle"><a href="../templates/allLocations.html" class="round-button">...</a></div>
 </div>
+
 <script>
     function vote(button, eventId, value) {
         var voteCountElement = document.getElementById("voteCount" + eventId);
