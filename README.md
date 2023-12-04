@@ -38,3 +38,4 @@ Installation Instructions:
 
 Group roles:
 Ryed: Backend, testing, authentication
+Rhea: Frontend pages, Top Events, Friends page
